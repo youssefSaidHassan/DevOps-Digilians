@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  namespace: digilians-frontend
+  labels:
+    app: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      serviceAccountName: app-sa
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: frontend
+          image: mesterjoe/digilians:frontend
+          ports:
+            - containerPort: 80

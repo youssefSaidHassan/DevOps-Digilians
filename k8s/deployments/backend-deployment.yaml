@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+  namespace: digilians-backend
+  labels:
+    app: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      serviceAccountName: app-sa
+      imagePullSecrets:
+        - name: regcred
+      containers:
+        - name: backend
+          image: mesterjoe/digilians:backend
+          ports:
+            - containerPort: 8000
+          env:
+            - name: ENV
+              value: "production"

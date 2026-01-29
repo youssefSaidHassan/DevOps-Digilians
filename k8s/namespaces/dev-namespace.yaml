@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: digilians-backend
+  labels:
+    name: digilians-backend
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: digilians-frontend
+  labels:
+    name: digilians-frontend

@@ -1,0 +1,30 @@
+# Secrets and credentials
+k8s/secrets/registry-secret.yaml
+.env
+.env.local
+
+# Dependencies
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+node_modules/
+*.log
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
