@@ -26,3 +26,16 @@ spec:
           env:
             - name: ENV
               value: "production"
+            - name: DB_HOST
+              value: "db.digilians-backend.svc.cluster.local"
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_NAME
+              value: "digilians"
+            - name: DB_USER
+              value: "digilians"
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: password
